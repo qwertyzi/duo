@@ -8,6 +8,29 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    
+    <div class="content">
+        <main class="main">
+            <div class="state">
+                <h1 class="state__title">
+                    Пары
+                </h1>
+                <p class="state__move">
+                    Шаги: 0
+                </p>
+                <p class="state__time">
+                    Время: 60 сек
+                </p>
+            </div>
+            <div class="board">
+                <h2 class="board__title">
+                    Кол-во карточек (от 2 до 6)
+                </h2>
+                <form class="board__form">
+                    <input type="nomber" min="2" max="6" step="2" placeholder="горизонталь/вертикаль" class="board__input">
+                    <button class="board__button" type="button">Начать</button>
+                </form>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
