@@ -21,11 +21,11 @@ function createBoard(colums) {
     gameBoard.textContent = "";
 
     const templ = document.querySelector('#gameTableTemplate');
-    console.log(templ);
+    const templCont = templ.content.cloneNode(true);
     
     //не находит table 
-    const table = templ.querySelector('.table');
-    const rest = templ.querySelector('.table__button');
+    const table = templCont.querySelector('.table');
+    const rest = templCont.querySelector('.table__button');
     console.log(table);
 
     table.style = `grid-template-columns: repeat(${colums}, 1fr);
