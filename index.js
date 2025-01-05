@@ -18,6 +18,7 @@ startBut.addEventListener('click', (e) => {
 
 
 function createBoard(colums) {
+
     gameBoard.textContent = "";
 
     const templ = document.querySelector('#gameTableTemplate');
@@ -39,5 +40,8 @@ function createBoard(colums) {
     
     gameBoard.append(rest);
 };
-
+function createCard() {
+    const cloneCard = document.querySelector("#cardTemplate").cloneNode(true).content;
+    const card = cloneCard.querySelector(".card");
+};
 

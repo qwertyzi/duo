@@ -6,6 +6,8 @@
     <title>Document</title>
     <script src="./index.js" defer="defer"></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css'>
+
 </head>
 <body>
     <div class="content">
@@ -35,6 +37,12 @@
     <template id="gameTableTemplate">
         <div class="table"></div>
         <button class="table__button button">Рестарт</button>
+    </template>
+    <template id="cardTemplate">
+        <div class="card">
+            <i class="flipped-icon fa" id="flipped-icon"></i>
+            <i class="default-icon fa fa-question-circle"></i>
+        </div>
     </template>
 </body>
 </html>
