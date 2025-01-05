@@ -13,21 +13,21 @@ startBut.addEventListener('click', (e) => {
     } else {
         input.value = 4;
     }
-    createBoard();
+    createBoard(count, colums);
 });
 
 
-function createBoard(colums) {
-
+function createBoard(count, colums) {
     gameBoard.textContent = "";
-
+    
     const templ = document.querySelector('#gameTableTemplate');
     const templCont = templ.content.cloneNode(true);
-    
-    //не находит table 
     const table = templCont.querySelector('.table');
     const rest = templCont.querySelector('.table__button');
-    console.log(table);
+    
+    for (let i = 0; i < count; i++) {
+        table.append(createCard());
+    }
 
     table.style = `grid-template-columns: repeat(${colums}, 1fr);
     grid-template-rows: repeat(${colums}, 1fr)`;
@@ -40,8 +40,10 @@ function createBoard(colums) {
     
     gameBoard.append(rest);
 };
+
 function createCard() {
     const cloneCard = document.querySelector("#cardTemplate").cloneNode(true).content;
     const card = cloneCard.querySelector(".card");
+    return card;
 };
 
