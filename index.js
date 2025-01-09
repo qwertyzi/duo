@@ -17,6 +17,9 @@ startButton.addEventListener("click", (event) => {
   createBoard(count, columns);
 });
 
+function createIconsArray(initialCount){
+  const cardsIcons = ["compass", "cloud", "play", "bolt", "stop", "cogs", "atom", "basketball-ball", "arrows", "angle-left", "bars", "file", "filter", "gear",     "folder", "folder-open", "shield", "scissors", "pen-clip"]
+}
 
 function createBoard(count, columns) {
 
@@ -58,3 +61,4 @@ function createCard(flippedIcon) {
   // rutern card означает, что получившийся объект "выбрасывается" в то место, где будет вызвана функция createCard
   return card;
 }
+
