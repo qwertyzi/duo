@@ -18,8 +18,38 @@ startButton.addEventListener("click", (event) => {
 });
 
 function createIconsArray(initialCount){
-  const cardsIcons = ["compass", "cloud", "play", "bolt", "stop", "cogs", "atom", "basketball-ball", "arrows", "angle-left", "bars", "file", "filter", "gear",     "folder", "folder-open", "shield", "scissors", "pen-clip"]
+  const cardsIcons = ["compass", "cloud", "play", "bolt", "stop", "cogs", "atom", "basketball-ball", "arrows", "angle-left", "bars", "file", "filter", "gear",     "folder", "folder-open", "shield", "scissors", "pen-clip"];
+  let cards = cardsIcons.slice(0, Math.floor(initialCount / 2));
+  const doubleCards = dublicateElements(cards);
+  const shuffleArray = shuffleArray(doubleCards);
 }
+
+function dublicateElements(array){
+  const newArrCards = [];
+  array.forEach(element => {
+    newArrCards.push(element, element);
+  });
+
+  return newArrCards;
+
+
+}
+
+function shuffleArray(array) {
+  let currentIndex = array.length;
+  
+  while (currentIndex !== 0) {
+  const randomIndex = Math.floor(Math.random() * currentIndex);
+  currentIndex--;
+  
+  const temp = array[currentIndex];
+  
+  array[currentIndex] = array[randomIndex];
+  array[randomIndex] = temp;
+  };
+  
+  return array;
+  }
 
 function createBoard(count, columns) {
 
