@@ -143,9 +143,9 @@ function createCard(flippedIcon) {
   const card = template.querySelector('.card');
 
   card.querySelector('#flippedIcon').classList.add(`fa-${flippedIcon}`);
-  card.addEventListener('click', (event) => gameLogic(event, card));
+  card.addEventListener('click', () => gameLogic(card));
 
   return card;
 }
 
-//ошибка на 46
+//скрыть дефолтную картинку
