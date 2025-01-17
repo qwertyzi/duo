@@ -115,7 +115,8 @@ function createBoard(count, columns) {
   const restartBtn = template.querySelector(".table__button");
 
   const icons = createIconsArray(count);
-
+  console.log(icons);
+  
   icons.forEach(element => {
     gameTable.append(createCard(element));
 
@@ -138,7 +139,10 @@ function createBoard(count, columns) {
 
 
 function createCard(flippedIcon) {
+  console.log(flippedIcon);
+  
   const template = document.querySelector('#cardTemplate').cloneNode(true).content;
+
 
   const card = template.querySelector('.card');
 

@@ -40,3 +40,14 @@
     background-color: rgba(218, 69, 218, 1);
 }
 
+.open {
+  display: none !important;
+}
+
+.card.flip .open {
+  display: block !important;
+}
+
+.card.flip .default-icon {
+  display: none !important;
+}
