@@ -62,7 +62,7 @@ function gameLogic(card) {
 
    // Если классы одинаковы
   if (isEqual) {
-    etTimeout(() => {
+    setTimeout(() => {
        // То перекрашиваем их в зеленый с задержкой в 1 секунду
       couple.first.classList.add('successfully');
       couple.second.classList.add('successfully');
@@ -88,6 +88,7 @@ function gameLogic(card) {
     couple.firstClickable = true;
     couple.secondClickable = true;
   }
+  isWin();
 };
 
 function shuffleArray(array) {
@@ -152,4 +153,12 @@ function createCard(flippedIcon) {
   return card;
 }
 
-//скрыть дефолтную картинку
+function isWin() {
+  const gameTable = document.querySelector('.table');
+  if (Array.from(gameTable.children).every((card) => card.classList.contains('flip'))) {
+    let interval = setTimeout(() => {
+      clearInterval(interval);
+      alert("_Побэдэ_");
+    }, 1500)
+  }
+} //должно открываться только 2 картошки
