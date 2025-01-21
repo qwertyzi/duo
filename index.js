@@ -8,6 +8,9 @@ const couple = {
   second: null, 
   secondClickable: true
 }
+let totalTime = 60;
+let totalFlips = 0;
+let intervalId;
 
 startButton.addEventListener("click", (event) => {
   event.preventDefault()
@@ -41,9 +44,12 @@ function dublicateElements(array){
 }
 
 function gameLogic(card) {
+  if (totalTime == 0) return;
   if (!couple.firstClickable && !couple.secondClickable) return;
 
+
   card.classList.add('flip');
+  totalFlips ++;
   
   if (couple.first === null) {
     // Если нет, то сохраняем на нее ссылку и считаем кликнутой
@@ -136,6 +142,7 @@ function createBoard(count, columns) {
 
   gameBoard.append(restartBtn);
 
+  startTimer()
 };
 
 
@@ -161,4 +168,24 @@ function isWin() {
       alert("_Побэдэ_");
     }, 1500)
   }
+  setTimeout(() => {
+    clearInterval(intervalId);
+    alert("побэдэ!")
+  }, 1500);
 } //должно открываться только 2 картошки
+
+function startTimer() {
+  const time = document.querySelector(".state__time");
+  const moves  = document.querySelector(".state__move");
+  console.log(time, moves);
+  
+  intervalId = setInterval(() => {
+    totalTime--;
+    time.textContent = `Время: ${totalFlips} сек`;
+    moves.textContent = `Шаги: ${totalFlips} шагов`;
+
+    if (totalTime === 0) {
+      clearInterval(intervalId)
+    }
+  }, 1000)  
+}
